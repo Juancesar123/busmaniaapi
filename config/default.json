@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "06d889463cb46cac89864ef4f3b11da8e4f897e7179b01a735ee82ed87547fc70e88825aae37a552435d6b52af6da29444e74676d3b368b6928ebb3bc87b24878b2d7d71312c052ce4d6f748431fec1c91671857454753b62b891f547bff8dc2fba08cc07e53601827fcec4ca2ec81e7ae49027f66ad787cfea18b6d854f1acc7021366ab7399cea8df15a35181bcdf7d3757793fc5f50565d843356bc36ab84db260e5d08821679f361ec6d21dbef3fd070a0c293f4afcfe72ef14d536eac5a43b6d64bda071c65cd60dffd754cd82682b4b5b9182a1f8637be20cfb7698c9c1460353b5cb6aa7a00e428723d7245aa18314072bbbe38474807384b2478cd88",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mysql": "mysql://root:@localhost:3306/busmaniaapi"
+}
